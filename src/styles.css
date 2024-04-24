@@ -1,0 +1,77 @@
+:root {
+    --primary: #e91e63;
+    --primary-rgb: 233, 30, 99;
+
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: local("JetBrains Mono"), url("/JetBrainsMono-Regular.woff2") format("woff");
+}
+
+html,
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    background: #000;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--primary);
+    color: black;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    width: 100dvw;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    box-sizing: border-box;
+    min-height: 100dvh;
+    min-width: 100dvw;
+}
+
+h1 {
+    font-family: "Anybody", "Inter", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+a {
+    color: white;
+    text-decoration-color: var(--primary);
+    text-decoration-thickness: .1rem;
+    transition: all 100ms cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 3px;
+    font-weight: 500;
+}
+a:hover,
+a:focus {
+    color: var(--primary);
+    text-decoration-thickness: .2rem;
+}
+
+:focus,
+:focus-visible {
+    outline: 3px solid var(--primary);
+}
+
+code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 1.2;
+}

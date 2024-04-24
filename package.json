@@ -1,0 +1,27 @@
+{
+  "name": "kamel",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@monaco-editor/loader": "^1.4.0",
+    "@tauri-apps/api": "^1",
+    "monaco-editor": "^0.48.0",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "monaco-languageclient": "^8.3.1",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.5",
+    "@tauri-apps/cli": "^1"
+  }
+}
