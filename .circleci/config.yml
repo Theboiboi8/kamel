@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   bun: ksylvest/bun@1.0.1
-  node: circleci/node@5.2.0
 
 jobs:
   build:
@@ -12,8 +11,7 @@ jobs:
       - checkout
       - bun/install
       - run: bun install
-      - run: bun x tauri build
-      - run: ls
+      - run: bun run tauri build
 
 workflows:
   build:
