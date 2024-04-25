@@ -11,7 +11,7 @@ jobs:
       - checkout
       - bun/install
       - run: bun install
-      - run: bunx tauri build
+      - run: bun run tauri build
 
 workflows:
   build:
