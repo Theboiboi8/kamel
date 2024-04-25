@@ -5,13 +5,10 @@ orbs:
   node: circleci/node@5.2.0
 
 jobs:
-  build:
+  node/run:
     docker:
       - image: cimg/base:current
     steps:
-      - checkout
-      - bun/install
-      - run: bun install
       - npm-run: tauri build
       - run: ls
 
