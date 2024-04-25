@@ -12,8 +12,8 @@ let props = defineProps({
 })
 
 let title = ref(props.project?.valueOf().trim())
-if (title.value.length >= 40) {
-	title = ref(title.value.slice(0, 20).padEnd(23, '.'))
+if (title.value.length >= 18) {
+	title = ref(title.value.slice(0, 17).padEnd(20, '.'))
 }
 </script>
 
