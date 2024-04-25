@@ -15,4 +15,5 @@ jobs:
 workflows:
   build:
     jobs:
-      - build
+      - node/run:
+        npm-run: tauri buils
