@@ -1,6 +1,7 @@
-# Kamel
-[![GitHub code size](https://img.shields.io/github/languages/code-size/theboiboi8/kamel?style=for-the-badge&labelColor=000000&color=dfff00)](https://github.com/theboiboi8/kamel)
-
-Cross-platform code editor build with Rust and Tauri
+<div align="center">
+  <img src="public/icon.svg" width="15%" height="15%">
+  <h1>Kamel</h1>
+  <p>Cross-platform code editor built with Rust and Tauri</p>
+</div>
 
 WIP
