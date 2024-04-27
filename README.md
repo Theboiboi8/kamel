@@ -8,4 +8,4 @@
   <p>Cross-platform code editor built with Rust and Tauri</p>
 </div>
 
-WIP
+Work In Progress
