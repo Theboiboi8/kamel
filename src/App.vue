@@ -8,12 +8,16 @@ import { invoke } from "@tauri-apps/api/tauri";
 setTimeout(() => {
 	invoke('close_splashscreen')
 }, 1000)
+
+function set_content(content) {
+
+}
 </script>
 
 <template>
     <Container class="container">
-	    <TopBar />
-	    <MainWindow />
+	    <TopBar ref="top_bar" @file_content="set_content" @file_path="console.log"/>
+	    <MainWindow ref="main"/>
     </Container>
 </template>
 

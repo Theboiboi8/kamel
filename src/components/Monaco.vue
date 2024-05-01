@@ -4,7 +4,6 @@ import loader from "@monaco-editor/loader";
 export default {
 	name: "Editor",
 	async mounted() {
-
 		loader.init().then((monaco) => {
 			monaco.editor.defineTheme("kamel-theme", {
 				base: 'vs-dark',
@@ -30,6 +29,22 @@ export default {
 					{
 						token: "operator",
 						foreground: '696969'
+					},
+					{
+						foreground: "ae81ff",
+						token: "constant.numeric"
+					},
+					{
+						foreground: "ae81ff",
+						token: "constant.language"
+					},
+					{
+						foreground: "ae81ff",
+						token: "constant.character"
+					},
+					{
+						foreground: "ae81ff",
+						token: "constant.other"
 					},
 					{
 						token: "number",
@@ -74,7 +89,19 @@ export default {
 			monaco.editor.create(document.getElementById("monaco"), editorOptions);
 		});
 	},
+	methods: {
+		set_editor_content(content) {
+			monaco.editor.getModels()[0].setValue(content)
+		}
+	}
 };
+
+let props = defineProps({
+	content: {
+		type: String,
+		default: ''
+	}
+})
 </script>
 
 <template>

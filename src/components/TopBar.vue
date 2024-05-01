@@ -3,27 +3,42 @@ import IconKamel from "./icons/IconKamel.vue";
 import Title from "./Title.vue";
 import IconProject from "./icons/IconProject.vue";
 import {ref} from "vue";
+import {invoke} from "@tauri-apps/api/tauri";
 
 let props = defineProps({
 	project: {
 		type: String,
-		default: ''
+		default: 'TEST'
 	}
 })
 
+let emit = defineEmits({
+	file_content: String,
+	file_path: String,
+})
+
 let title = ref(props.project?.valueOf().trim())
-if (title.value.length >= 18) {
-	title = ref(title.value.slice(0, 17).padEnd(20, '.'))
+if (title.value?.length >= 18) {
+	title = ref(title.value?.slice(0, 17).padEnd(20, '.'))
+}
+
+function pick_file() {
+	invoke('pick_file').then(emit_signals)
+}
+
+function emit_signals(e: any) {
+	emit('file_content', e[0]);
+	emit('file_path', e[1]);
 }
 </script>
 
 <template>
-	<div class="topbar_container">
+	<div class="top_bar_container">
 		<a href="/">
 			<IconKamel />
 			<Title>Kamel</Title>
 		</a>
-		<div class="project_view" v-show='title != ""'>
+		<div class="project_view" v-show='title != ""' @click="pick_file()">
 			<IconProject>
 				{{ title.toUpperCase().slice(0, 2) }}
 			</IconProject>
@@ -33,7 +48,7 @@ if (title.value.length >= 18) {
 </template>
 
 <style scoped>
-.topbar_container {
+.top_bar_container {
 	background-color: #121212;
 	height: 3em;
 	width: 100dvw;
@@ -59,6 +74,7 @@ if (title.value.length >= 18) {
 		height: fit-content;
 		width: fit-content;
 		flex-direction: row-reverse;
+		cursor: pointer;
 	}
 }
 </style>

@@ -12,8 +12,8 @@ let props = defineProps({
 
 <template>
 	<div class="main_window_container">
-		<Browser />
-		<Editor />
+		<Browser ref="browser"/>
+		<Editor ref="editor"/>
 	</div>
 </template>
 

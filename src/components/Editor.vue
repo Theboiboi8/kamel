@@ -1,11 +1,10 @@
 <script setup lang="ts">
-
 import Monaco from "./Monaco.vue";
 </script>
 
 <template>
 	<div class="editor_container">
-		<Monaco />
+		<Monaco ref="monaco"/>
 	</div>
 </template>
 
